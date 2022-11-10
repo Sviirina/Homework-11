@@ -11,7 +11,7 @@ public class Main {
         checkApplicationVersion(2010, 1);
         System.out.println();
         System.out.println("Задача 3");
-        calculateDeliveryDays(62);
+        calculateDeliveryDays(165);
     }
 
     public static void getYear(int year) {
@@ -54,13 +54,15 @@ public class Main {
 
     public static void calculateDeliveryDays(int deliveryDistance) {
         int deliveryDays = 1;
+        if (deliveryDistance > 100) {
+            System.out.println("Срок доставки рассчитать невозможно");
+            return;
+        }
         if (deliveryDistance > 20) {
             deliveryDays++;
         }
         if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            deliveryDays++;
-        } else {
-            System.out.println("Срок доставки рассчитать невозможно");
+                deliveryDays++;
         }
         System.out.println("Потребуется дней для доставки: " + deliveryDays);
     }
